@@ -23,6 +23,10 @@ target 'cxxProceduralImages' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+  if ENV['RCT_NEW_ARCH_ENABLED'] == '1'
+    pod 'CxxProceduralImages', :path => "./../tm"
+  end
+
   target 'cxxProceduralImagesTests' do
     inherit! :complete
     # Pods for testing
